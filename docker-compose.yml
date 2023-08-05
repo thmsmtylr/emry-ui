@@ -2,7 +2,7 @@ version: "2"
 services:
   # turborepo
   turbo:
-    container_name: turborepo-starter
+    container_name: emry-ui
     build:
       context: .
       dockerfile: Dockerfile

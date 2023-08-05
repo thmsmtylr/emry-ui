@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   // Optionally pull the tailwind.config.js from our `ui` stub
   // presets: [require("../../packages/ui/tailwind.config.js")],

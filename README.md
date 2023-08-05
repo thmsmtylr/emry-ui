@@ -1,4 +1,4 @@
-# Turborepo starter (Next.js, TypeScript, Docker, ESLint, Jest, Prettier, Rollup.js, Tailwind, Storybook)
+# Emry UI (Next.js, Turborepo, TypeScript, Docker, ESLint, Jest, Prettier, Rollup.js, Tailwind, Storybook)
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/thmsmtylr/turborepo-starter/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/thmsmtylr/turborepo-starter/tree/main)[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=thmsmtylr_turborepo-starter&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=thmsmtylr_turborepo-starter)
 
@@ -30,12 +30,16 @@ This turborepo has some additional tools already setup for you:
 - [Tailwind](https://tailwindcss.com/) a utility first css framework for styling
 - [Storybook.js](https://storybook.js.org/) build component driven UIs faster
 
+### Install
+
+`yarn install`
+
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd turborepo-starter
+cd emry-ui
 yarn run build
 ```
 
@@ -44,14 +48,14 @@ yarn run build
 To develop all apps and packages, run the following command:
 
 ```
-cd turborepo-starter
+cd emry-ui
 yarn run dev
 ```
 
 or
 
 ```
-cd turborepo-starter
+cd emry-ui
 docker-compose up --build
 ```
 

@@ -9,4 +9,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  docs: {
+    canvas: {
+      sourceState: "shown",
+    },
+  },
 };

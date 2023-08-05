@@ -7,12 +7,12 @@ const Admin: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Turborepo Starter: Admin</title>
-        <meta name="description" content="Turborepo Starter: Admin" />
+        <title>Emry UI: Admin</title>
+        <meta name="description" content="Emry UI: Admin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Turborepo Starter: Admin</h1>
+        <h1>Emry UI: Admin</h1>
         <Button label="button" onClick={() => console.log("click")} />
       </main>
     </>

@@ -44,6 +44,7 @@
     "next": "^12.1.0",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
+    "prettier-plugin-tailwindcss": "^0.4.1",
     "resolve": "^1.22.0",
     "rollup": "^2.67.1",
     "rollup-plugin-delete": "^2.0.0",

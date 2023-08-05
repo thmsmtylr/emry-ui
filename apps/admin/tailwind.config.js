@@ -6,7 +6,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     // Ensure the styles for our components are included from our `ui` stub
-    "../../packages/ui/components/Button.tsx",
+    // "../../packages/ui/components/Button.tsx",
   ],
   theme: {
     extend: {},
