@@ -1,7 +1,10 @@
 import React from "react";
 import { forwardRef } from "react";
-import { classNames } from "../../core/classnames/src/classNames";
-import { useRemoveClasses } from "../../core/hooks/useRemoveClasses";
+import { classNames } from "../../core/classnames";
+import { useRemoveClasses } from "../../core/hooks";
+// import { classNames } from "react/core/classnames/src/classNames";
+// import { classNames } from "react/core/classnames";
+// import { useRemoveClasses } from "react/core/hooks/index";
 
 export type ButtonSize = "sm" | "md" | "lg" | "xl" | "2xl";
 

@@ -1,7 +1,6 @@
 import React from "react";
-import { classNames } from "../../core/classnames/src/classNames";
-import { useRemoveClasses } from "../../core/hooks/useRemoveClasses";
-// import { useRemoveClasses } from "@/react/core/hooks/useRemoveClasses";
+// import { classNames } from "react/core/classnames/src/classNames";
+// import { useRemoveClasses } from "react/core/hooks";
 
 export type DotSize = "sm" | "md" | "lg";
 
@@ -9,7 +8,7 @@ export type DotVariant = "white" | "success";
 
 export interface DotProps {
   size?: DotSize;
-  // outline?: boolean;
+  outline?: boolean;
   headless?: boolean;
   variant?: string;
   className?: string;
@@ -17,34 +16,36 @@ export interface DotProps {
   removeClassNames?: string;
 }
 
-export const Dot = (props: DotProps) => {
-  const {
-    size = "md",
-    // outline = true,
-    headless = false,
-    variant = "white",
-    className = "",
-    addClassNames,
-    removeClassNames,
-  } = props;
+export const Dot = () => <></>;
 
-  const removeClasses = useRemoveClasses();
+// export const Dot = (props: DotProps) => {
+//   const {
+//     size = "md",
+//     // outline = true,
+//     headless = false,
+//     variant = "white",
+//     className = "",
+//     addClassNames,
+//     removeClassNames,
+//   } = props;
 
-  let classList = !headless
-    ? [
-        coreClassNames,
-        sizeClassNames[size],
-        variantClassNames[variant],
-        addClassNames ?? "",
-      ]
-    : [className];
+//   const removeClasses = useRemoveClasses();
 
-  if (removeClassNames) {
-    classList = removeClasses(classList, removeClassNames);
-  }
+//   let classList = !headless
+//     ? [
+//         coreClassNames,
+//         sizeClassNames[size],
+//         variantClassNames[variant],
+//         addClassNames ?? "",
+//       ]
+//     : [className];
 
-  return <span className={classNames(...classList)} />;
-};
+//   if (removeClassNames) {
+//     classList = removeClasses(classList, removeClassNames);
+//   }
+
+//   return <span className={classNames(...classList)} />;
+// };
 
 const coreClassNames: string = "rounded-full";
 
