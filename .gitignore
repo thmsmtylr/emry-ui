@@ -46,3 +46,6 @@ dist
 
 # yarn
 .yarn
+
+# parcel
+.parcel-cache

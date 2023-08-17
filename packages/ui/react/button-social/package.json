@@ -1,0 +1,36 @@
+{
+  "name": "@emry-ui/button-social",
+  "version": "0.0.0",
+  "description": "Emry UI button social component",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thmsmtylr/emry-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thmsmtylr/emry-ui/issues"
+  },
+  "homepage": "https://github.com/thmsmtylr/emry-ui#readme",
+  "author": "emryui@proton.me",
+  "license": "MIT",
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  }
+}

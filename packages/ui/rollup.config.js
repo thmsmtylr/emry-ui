@@ -12,56 +12,69 @@ import { babel } from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import { DEFAULT_EXTENSIONS } from "@babel/core";
 
-export default [
+const components = [
   {
-    input: "index.tsx",
-    output: {
-      file: "dist/index.tsx",
-      format: "cjs",
-    },
-    external: ["react", "react-dom"],
-    plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      del({ targets: "./dist/*" }),
-      svgr(),
-      typescript({
-        verbosity: 1,
-        tsconfig: "./tsconfig.rollup.json",
-      }),
-      url({
-        include: [
-          "./fonts/**/*.ttf",
-          "./fonts/**/*.woff",
-          "./fonts/**/*.woff2",
-          "./fonts/**/*.svg",
-        ],
-      }),
-      babel({
-        babelHelpers: "bundled",
-        exclude: "node_modules/**",
-        extensions: [...DEFAULT_EXTENSIONS, ".ts", "tsx"],
-      }),
-      postcss({
-        config: {
-          path: "./postcss.config.js",
-        },
-        plugins: [
-          autoprefixer(),
-          tailwind({
-            config: "./tailwind.config.js",
-          }),
-        ],
-      }),
-      terser({
-        compress: true,
-        mangle: true,
-        output: {
-          preamble: "/* eslint-disable */",
-          comments: false,
-        },
-      }),
-    ],
+    name: "button",
+    input: "src/button.ts",
+  },
+  {
+    name: "button-social",
+    input: "src/button-social.ts",
   },
 ];
+
+export default components.map((component) => ({
+  input: `./react/${component.name}/src/index.ts`, // Use the root-level index.ts as the input
+  output: [
+    {
+      dir: `./react/${component.name}/dist`, // Output directory for generated JavaScript files
+      format: "esm", // Same for the ES module format
+      entryFileNames: "index.esm.js",
+      chunkFileNames: "[name]-[hash].esm.js",
+    },
+  ],
+  external: ["react", "react-dom"],
+  plugins: [
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    del({ targets: `./dist/${component.name}/*` }),
+    svgr(),
+    typescript({
+      verbosity: 1,
+      tsconfig: "./tsconfig.json",
+    }),
+    url({
+      include: [
+        "./fonts/**/*.ttf",
+        "./fonts/**/*.woff",
+        "./fonts/**/*.woff2",
+        "./fonts/**/*.svg",
+      ],
+    }),
+    babel({
+      babelHelpers: "bundled",
+      exclude: "node_modules/**",
+      extensions: [...DEFAULT_EXTENSIONS, ".ts", ".tsx"],
+    }),
+    postcss({
+      config: {
+        path: "./postcss.config.js",
+      },
+      plugins: [
+        autoprefixer(),
+        tailwind({
+          config: "./tailwind.config.js",
+        }),
+      ],
+    }),
+    terser({
+      compress: true,
+      mangle: true,
+      output: {
+        preamble: "/* eslint-disable */",
+        comments: false,
+      },
+    }),
+  ],
+}));

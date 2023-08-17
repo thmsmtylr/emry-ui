@@ -1,10 +1,7 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { forwardRef } from "react";
 import { classNames } from "../../core/classnames";
 import { useRemoveClasses } from "../../core/hooks";
-// import { classNames } from "react/core/classnames/src/classNames";
-// import { classNames } from "react/core/classnames";
-// import { useRemoveClasses } from "react/core/hooks/index";
 
 export type ButtonSize = "sm" | "md" | "lg" | "xl" | "2xl";
 
@@ -19,10 +16,9 @@ export type ButtonVariant =
 
 export type ButtonTransitionSpeed = "fast" | "subtle" | "slow" | "none";
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   children: any;
-  onClick?: () => void;
   disabled?: boolean;
   type?: "submit" | "reset" | "button";
   variant?: ButtonVariant;
@@ -34,6 +30,7 @@ export interface ButtonProps {
   destructive?: boolean;
   dot?: boolean;
   iconOnly?: boolean;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 export type ButtonRef = HTMLButtonElement;
@@ -48,7 +45,6 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     disabled = false,
     headless = false,
     destructive = false,
-    onClick,
     type = "button",
     variant = "primary",
     addClassNames,
@@ -57,6 +53,7 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     transition = "subtle",
     dot = false,
     iconOnly = false,
+    as = "button",
     ...rest
   } = props;
 
@@ -88,17 +85,18 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     classList = removeClasses(classList, "px-4 py-2.5");
   }
 
-  return (
-    <button
-      {...rest}
-      ref={ref}
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={classNames(...classList)}
-    >
-      {children}
-    </button>
+  return React.createElement(
+    as,
+    {
+      ref,
+      disabled,
+      role: as !== "button" ? "button" : undefined,
+      "aria-label": as !== "button" ? "button" : undefined,
+      ...(as !== "button" ? {} : { type }),
+      className: classNames(...classList),
+      ...rest,
+    },
+    children
   );
 });
 
@@ -126,7 +124,7 @@ const sizeClassNames = {
 } as Record<ButtonSize, string>;
 
 const coreClassNames: string =
-  "gap-2 rounded-lg font-medium flex items-center justify-center";
+  "inline-flex items-center justify-center flex-grow-0 gap-2 rounded-lg font-semibold";
 
 const variantClassNames = {
   // Default

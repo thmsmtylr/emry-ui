@@ -34,6 +34,23 @@ module.exports = {
         1.5: "1.5px",
       },
       colors: {
+        social: {
+          facebook: {
+            DEFAULT: "#1877F2",
+            600: "#1877F2",
+            700: "#0C63D4",
+          },
+          twitter: {
+            DEFAULT: "#1DA1F2",
+            600: "#1DA1F2",
+            700: "#0C8BD9",
+          },
+          dribbble: {
+            DEFAULT: "#EA4C89",
+            600: "#EA4C89",
+            700: "#E62872",
+          },
+        },
         primary: {
           DEFAULT: "#7A28FF",
           25: "FCFAFF",

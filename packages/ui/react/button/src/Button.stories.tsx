@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Button, ButtonProps } from "./Button";
 import { Dot } from "../../dot/src";
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import Lock from "../../../images/icons/lock-01.svg";
+import LockIcon from "../../../images/icons/svg/lock.svg";
 
 export default {
   title: "Buttons",
@@ -13,17 +13,13 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  children: "Button CTA",
-  onClick: () => console.log("On click"),
-  disabled: false,
-};
+Primary.args = { children: "Button CTA" };
 
 export const PrimaryWithIconTrailing = Template.bind({});
 PrimaryWithIconTrailing.args = {
   children: (
     <>
-      Button CTA <Lock className="h-5 w-5" />
+      Button CTA <LockIcon className="h-5 w-5" />
     </>
   ),
   onClick: () => console.log("On click"),
@@ -34,7 +30,7 @@ export const PrimaryWithIconLeading = Template.bind({});
 PrimaryWithIconLeading.args = {
   children: (
     <>
-      <Lock className="h-5 w-5" /> Button CTA
+      <LockIcon className="h-5 w-5" /> Button CTA
     </>
   ),
   onClick: () => console.log("On click"),
@@ -45,9 +41,9 @@ export const PrimaryWithAccessibleIcon = Template.bind({});
 PrimaryWithAccessibleIcon.args = {
   children: (
     <>
-      Button CTA{" "}
+      Button CTA
       <AccessibleIcon label="Button CTA">
-        <Lock className="h-5 w-5" />
+        <LockIcon className="h-5 w-5" />
       </AccessibleIcon>
     </>
   ),
@@ -66,7 +62,7 @@ export const PrimaryDisabledWithIcon = Template.bind({});
 PrimaryDisabledWithIcon.args = {
   children: (
     <>
-      Button CTA <Lock className="h-5 w-5" />
+      Button CTA <LockIcon className="h-5 w-5" />
     </>
   ),
   onClick: () => console.log("On click"),
@@ -78,7 +74,7 @@ PrimaryWithRestProps.args = {
   children: "Edit CTA",
   "data-id": "123",
   "aria-label": "Edit shipping address",
-} as Partial<ButtonProps & { "data-id": string }>;
+} as Partial<ButtonProps & { "data-id": string; "aria-label": string }>;
 
 export const PrimaryWithDot = Template.bind({});
 PrimaryWithDot.args = {
@@ -110,7 +106,7 @@ export const PrimaryWithIconOnly = Template.bind({});
 PrimaryWithIconOnly.args = {
   children: (
     <AccessibleIcon label="Lock account">
-      <Lock className="h-5 w-5" />
+      <LockIcon className="h-5 w-5" />
     </AccessibleIcon>
   ),
   size: "sm",
@@ -163,4 +159,10 @@ PrimaryDestructive.args = {
   onClick: () => console.log("On click"),
   disabled: false,
   destructive: true,
+};
+
+export const PrimaryWithAs = Template.bind({});
+PrimaryWithAs.args = {
+  children: "Button CTA",
+  as: "div",
 };

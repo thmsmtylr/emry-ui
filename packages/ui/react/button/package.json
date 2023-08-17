@@ -1,14 +1,15 @@
 {
   "name": "@emry-ui/button",
-  "version": "1.0.0",
+  "version": "0.0.01",
   "description": "Emry UI button component",
+  "source": "./src/index.ts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/emry-ui"
+    "url": "git+https://github.com/thmsmtylr/emry-ui.git"
   },
   "author": "emryui@proton.me",
   "license": "MIT",
