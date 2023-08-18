@@ -2,10 +2,6 @@
   "name": "ui",
   "version": "0.0.0",
   "license": "MIT",
-  "source": "index.ts",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
@@ -66,7 +62,8 @@
     "dev": "start-storybook -p 6006",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "build:ui": "parcel build",
+    "build:ui": "for dir in react/button; do cd $dir && npm run build 2>/dev/null && cd ../..; done",
+    "build:tokens": "cd ./tokens && npm run build",
     "test": "jest"
   },
   "dependencies": {

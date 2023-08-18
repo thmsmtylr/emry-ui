@@ -3,9 +3,9 @@ import { forwardRef } from "react";
 import { classNames } from "../../core/classnames";
 import { useRemoveClasses } from "../../core/hooks";
 
-export type ButtonSize = "sm" | "md" | "lg" | "xl" | "2xl";
+type ButtonSize = "sm" | "md" | "lg" | "xl" | "2xl";
 
-export type ButtonVariant =
+type ButtonVariant =
   | "primary"
   | "secondary gray"
   | "secondary color"
@@ -14,9 +14,9 @@ export type ButtonVariant =
   | "link gray"
   | "link color";
 
-export type ButtonTransitionSpeed = "fast" | "subtle" | "slow" | "none";
+type ButtonTransitionSpeed = "fast" | "subtle" | "slow" | "none";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   children: any;
   disabled?: boolean;
@@ -33,12 +33,14 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   as?: keyof JSX.IntrinsicElements;
 }
 
-export type ButtonRef = HTMLButtonElement;
+type ButtonRef = HTMLButtonElement;
+
+const BUTTON_NAME = "Button";
 
 /**
  * Buttons communicate actions that users can take.
  */
-export const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
+const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
   const {
     children,
     size = "md",
@@ -150,4 +152,13 @@ const destructiveVariantClassNames = {
     "bg-error-600 disabled:bg-error-200 text-white hover:bg-error-700 focus:ring-4 focus:ring-error-100",
 } as Record<ButtonVariant, string>;
 
-Button.displayName = "Button";
+Button.displayName = BUTTON_NAME;
+
+export { Button };
+export type {
+  ButtonSize,
+  ButtonVariant,
+  ButtonTransitionSpeed,
+  ButtonProps,
+  ButtonRef,
+};

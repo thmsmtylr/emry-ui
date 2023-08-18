@@ -19,6 +19,9 @@
     "build:ui": {
       "cache": false
     },
+    "build:tokens": {
+      "cache": false
+    },
     "test": {
       "cache": false
     }

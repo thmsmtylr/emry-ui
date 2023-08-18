@@ -1,4 +1,3 @@
-// export { Button } from "./react/button/src";
 export { Button } from "react/button/src";
 export type {
   ButtonSize,

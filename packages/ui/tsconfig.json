@@ -1,7 +1,5 @@
 {
-  "extends": "tsconfig/react-library.json",
   "include": [".", "**/*.ts", "**/*.tsx"],
-  "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
@@ -35,10 +33,5 @@
     "stripInternal": true,
     "target": "es2018",
     "types": ["node"]
-    // "paths": {
-    //   "@/*": ["./*"],
-    //   "@react/*": ["./react/*"]
-    // }
-    // "typeRoots": ["./node_modules/@types", "./types"]
   }
 }
