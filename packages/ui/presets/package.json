@@ -29,8 +29,5 @@
   ],
   "dependencies": {
     "tailwindcss": "^3.3.3"
-  },
-  "devDependencies": {
-    "release-it": "^16.1.5"
   }
 }
