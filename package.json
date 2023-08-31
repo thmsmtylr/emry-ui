@@ -7,6 +7,16 @@
     "apps/*",
     "packages/*"
   ],
+  "main": "packages/ui/presets/src/dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thmsmtylr/emry-ui.git",
+    "directory": "packages"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "directory": "./src"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
