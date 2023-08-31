@@ -19,7 +19,7 @@
     "build:ui": {
       "cache": false
     },
-    "build:tokens": {
+    "build:presets": {
       "cache": false
     },
     "test": {
