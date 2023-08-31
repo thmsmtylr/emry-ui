@@ -89,6 +89,7 @@
     "build:storybook": "storybook build",
     "build:ui": "for dir in react/button; do cd $dir && npm run build 2>/dev/null && cd ../..; done",
     "build:presets": "cd ./presets && npm run build",
+    "release:presets": "cd ./presets && npm publish",
     "test": "jest"
   },
   "dependencies": {

@@ -22,6 +22,9 @@
     "build:presets": {
       "cache": false
     },
+    "release:presets": {
+      "cache": false
+    },
     "test": {
       "cache": false
     }
