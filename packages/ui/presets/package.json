@@ -1,6 +1,6 @@
 {
-  "name": "@emry-ui/presets",
-  "version": "0.0.1",
+  "name": "@emryui/presets",
+  "version": "1.5.0",
   "license": "MIT",
   "description": "Emry UI Tailwind presets",
   "author": "Emry UI <emryui@proton.me>",
@@ -8,27 +8,29 @@
   "source": "./src/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
+  "repository": "git+https://github.com/thmsmtylr/emry-ui.git",
+  "publishConfig": {
+    "access": "public",
+    "@emryui:registry": "https://npm.pkg.github.com",
+    "directory": "./src"
+  },
   "scripts": {
     "clean": "rm -rf dist",
     "version": "yarn version",
-    "build": "npm run clean && parcel build src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thmsmtylr/emry-ui.git"
+    "build": "npm run clean && parcel build src/index.js",
+    "release": "release-it"
   },
   "keywords": [
     "Emry UI",
     "Emry UI presets",
     "tokens",
-    "tailwind",
+    "Tailwind",
     "Tailwind presets"
   ],
-  "publishConfig": {
-    "access": "public",
-    "@emryui:registry": "https://npm.pkg.github.com"
-  },
   "dependencies": {
     "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "release-it": "^16.1.5"
   }
 }
