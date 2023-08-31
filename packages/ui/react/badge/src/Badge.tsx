@@ -25,9 +25,9 @@ type BadgeVariant =
   | "gray blue";
 
 interface BadgeProps {
-  size: BadgeSize;
-  type: BadgeType;
-  variant: BadgeVariant;
+  size?: BadgeSize;
+  type?: BadgeType;
+  variant?: BadgeVariant;
   addClassNames?: string;
   removeClassNames?: string;
   className?: string;
@@ -52,7 +52,6 @@ const Badge = forwardRef<BadgeRef, BadgeProps>((props, ref) => {
     as,
     {
       ref,
-      type,
       className: classNames(
         coreClassNames,
         type === "default"
@@ -67,11 +66,13 @@ const Badge = forwardRef<BadgeRef, BadgeProps>((props, ref) => {
   );
 });
 
-const coreClassNames: string = "inline-flex items-center justify-center";
+const coreClassNames: string =
+  "inline-flex items-center justify-center ring-1 ring-inset";
 
 const variantClassNames = {
   // Default
-  gray: "bg-gray-50 ring-1 ring-gray-200 ring-inset text-gray-700",
+  gray: "bg-gray-50 ring-gray-200 text-gray-700",
+  primary: "bg-primary-50 ring-primary-200 text-primary-700",
 } as Record<BadgeVariant, string>;
 
 const defaultSizeClassNames = {

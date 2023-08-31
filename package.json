@@ -15,7 +15,7 @@
     "storybook": "turbo run storybook",
     "build:storybook": "turbo run build:storybook",
     "build:ui": "turbo run build:ui",
-    "build:tokens": "turbo run build:tokens",
+    "build:presets": "turbo run build:presets",
     "test": "turbo run test"
   },
   "devDependencies": {

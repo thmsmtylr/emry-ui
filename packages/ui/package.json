@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "@headlessui/react": "^1.4.2",
+    "@jest/globals": "^29.6.4",
     "@radix-ui/react-accessible-icon": "^1.0.3",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -46,7 +47,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "@testing-library/react": "^13.4.0",
     "@types/babel__core": "^7.1.18",
-    "@types/jest": "^29.2.4",
+    "@types/jest": "^29.5.4",
     "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
@@ -87,7 +88,7 @@
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
     "build:ui": "for dir in react/button; do cd $dir && npm run build 2>/dev/null && cd ../..; done",
-    "build:tokens": "cd ./tokens && npm run build",
+    "build:presets": "cd ./presets && npm run build",
     "test": "jest"
   },
   "dependencies": {

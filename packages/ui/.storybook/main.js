@@ -28,6 +28,7 @@ module.exports = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-styling-webpack"),
+    getAbsolutePath("@whitespace/storybook-addon-html"),
   ],
 
   framework: {

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const presets = require("./presets/src/index");
+const presets = require("./presets/dist/index");
 
 module.exports = {
   presets: [presets],
