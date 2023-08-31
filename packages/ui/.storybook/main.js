@@ -1,3 +1,4 @@
+import { dirname, join } from "path";
 module.exports = {
   stories: [
     "../stories/**/*.stories.mdx",
@@ -23,23 +24,15 @@ module.exports = {
   },
 
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        postcssLoaderOptions: {
-          implementation: require("postcss"),
-        },
-      },
-    },
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath("@storybook/addon-styling-webpack"),
   ],
 
-  framework: "@storybook/react",
-
-  core: {
-    builder: "webpack5",
+  framework: {
+    name: getAbsolutePath("@storybook/nextjs"),
+    options: {},
   },
 
   typescript: { reactDocgen: false },
@@ -48,3 +41,7 @@ module.exports = {
     autodocs: true,
   },
 };
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, "package.json")));
+}

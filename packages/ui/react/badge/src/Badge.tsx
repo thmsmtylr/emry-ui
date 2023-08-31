@@ -67,12 +67,11 @@ const Badge = forwardRef<BadgeRef, BadgeProps>((props, ref) => {
   );
 });
 
-const coreClassNames: string =
-  "inline-flex items-center justify-center flex-grow-0";
+const coreClassNames: string = "inline-flex items-center justify-center";
 
 const variantClassNames = {
   // Default
-  gray: "bg-gray-50 outline outline-1 outline-gray-200 text-gray-700",
+  gray: "bg-gray-50 ring-1 ring-gray-200 ring-inset text-gray-700",
 } as Record<BadgeVariant, string>;
 
 const defaultSizeClassNames = {
