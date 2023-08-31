@@ -21,12 +21,12 @@
     "Emry UI",
     "Emry UI presets",
     "tokens",
-    "css",
     "tailwind",
     "Tailwind presets"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "@emryui:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "tailwindcss": "^3.3.3"
