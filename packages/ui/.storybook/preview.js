@@ -14,4 +14,11 @@ export const parameters = {
       sourceState: "shown",
     },
   },
+  html: {
+    prettier: {
+      tabWidth: 2,
+      useTabs: false,
+      htmlWhitespaceSensitivity: "strict",
+    },
+  },
 };

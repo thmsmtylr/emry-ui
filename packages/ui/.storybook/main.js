@@ -1,6 +1,11 @@
 module.exports = {
-  stories: ["../react/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../stories/**/*.stories.mdx",
+    "../react/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
+
   staticDirs: ["../images"],
+
   webpackFinal: (config) => {
     // Default rule for images /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
     const fileLoaderRule = config.module.rules.find(
@@ -16,6 +21,7 @@ module.exports = {
 
     return config;
   },
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -29,9 +35,16 @@ module.exports = {
       },
     },
   ],
+
   framework: "@storybook/react",
+
   core: {
     builder: "webpack5",
   },
+
   typescript: { reactDocgen: false },
+
+  docs: {
+    autodocs: true,
+  },
 };

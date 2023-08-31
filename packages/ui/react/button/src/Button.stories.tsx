@@ -89,7 +89,6 @@ PrimaryWithDot.args = {
 export const YoutubeHeadless = Template.bind({});
 YoutubeHeadless.args = {
   children: "Button CTA",
-  headless: true,
   className:
     "relative text-white overflow-hidden bg-black text-sm py-2.5 px-4 rounded-lg font-medium border border-solid border-transparent transition-[background-image] bg-gradient-yt bg-clip-padding-border bg-origin-border-border before:content-[''] before:z-[1] before:bg-transparent before:absolute before:inset-0 before:transition-colors hover:before:bg-[#ffffff1a]",
 };
@@ -97,7 +96,6 @@ YoutubeHeadless.args = {
 export const ShopifyHeadless = Template.bind({});
 ShopifyHeadless.args = {
   children: "Button CTA",
-  headless: true,
   className:
     "relative text-white border-none rounded-[0.5rem] min-h-[1.75rem] min-w-[1.75rem] px-3 py-1.5 text-xs font-medium bg-[#303030] before:bg-gradient-shopify before:rounded-[.5625rem] before:absolute before:inset-0 before:content-[''] before:mix-blend-luminosity before:shadow-shopify before:hover:shadow-shopify-hover before:hover:shadow-none",
 };

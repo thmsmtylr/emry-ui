@@ -32,6 +32,8 @@
     "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@whitespace/storybook-addon-html": "^5.1.6",
+    "add": "^2.0.6",
     "autoprefixer": "^10.4.2",
     "babel-jest": "^29.3.1",
     "babel-loader": "^8.2.3",
@@ -44,7 +46,9 @@
     "parcel": "^2.9.3",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
+    "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.4.1",
+    "react-syntax-highlighter": "^15.5.0",
     "resolve": "^1.22.0",
     "rollup": "^2.67.1",
     "rollup-plugin-delete": "^2.0.0",
@@ -56,7 +60,8 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "tsconfig": "*",
-    "typescript": "^4.5.3"
+    "typescript": "^4.5.3",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "dev": "start-storybook -p 6006",
@@ -67,8 +72,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@whitespace/storybook-addon-html": "^5.1.6",
     "react": "18",
-    "react-dom": "18"
+    "react-dom": "18",
+    "react-syntax-highlighter": "^15.5.0",
+    "remove": "^0.1.5"
   },
   "resolutions": {
     "**/fsevents": "^2.3.2"
