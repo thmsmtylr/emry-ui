@@ -3,14 +3,14 @@
 </div>
 
 <div align="center">
-  <h1>Emry UI - Tailwind Preset</h1>
+  <h1>Emry UI - Presets</h1>
   <p><b>Supercharge your frontend development</b></p>
 </div>
 
 ### Installation
 
 ```
-yarn add @emryui/tailwind-preset
+yarn add @emryui/presets
 ```
 
 `tailwind.config.js`:
@@ -18,7 +18,7 @@ yarn add @emryui/tailwind-preset
 ```
 module.exports = {
   presets: [
-    require("@emryui/tailwind-preset")
+    require("@emryui/presets")
   ],
   // Everything else
 }
