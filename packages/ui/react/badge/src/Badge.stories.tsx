@@ -21,3 +21,10 @@ export const Primary: Story = {
     variant: "primary",
   },
 };
+
+export const Error: Story = {
+  args: {
+    children: "Label",
+    variant: "error",
+  },
+};

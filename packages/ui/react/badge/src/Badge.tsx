@@ -73,6 +73,7 @@ const variantClassNames = {
   // Default
   gray: "bg-gray-50 ring-gray-200 text-gray-700",
   primary: "bg-primary-50 ring-primary-200 text-primary-700",
+  error: "bg-error-50 ring-error-200 text-error-700",
 } as Record<BadgeVariant, string>;
 
 const defaultSizeClassNames = {
