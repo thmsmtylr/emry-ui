@@ -26,7 +26,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   removeClassNames?: string;
   className?: string;
   transition?: ButtonTransitionSpeed;
-  headless?: boolean;
   destructive?: boolean;
   dot?: boolean;
   iconOnly?: boolean;
@@ -45,7 +44,6 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     children,
     size = "md",
     disabled = false,
-    headless = false,
     destructive = false,
     type = "button",
     variant = "primary",
@@ -65,7 +63,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
   // to remain at the last index of our array to ensure that
   // added classes have the highest priority when it comes
   // to applying styles
-  let classList = !headless
+  let classList = !className
     ? [
         coreClassNames,
         iconOnly
@@ -126,12 +124,12 @@ const sizeClassNames = {
 } as Record<ButtonSize, string>;
 
 const coreClassNames: string =
-  "inline-flex items-center justify-center flex-grow-0 gap-2 rounded-lg font-semibold";
+  "inline-flex items-center justify-center flex-grow-0 gap-2 rounded-lg font-semibold outline outline-1";
 
 const variantClassNames = {
   // Default
   primary:
-    "bg-primary-600 text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 disabled:bg-primary-200 shadow-xs",
+    "bg-primary-600 outline-primary-600 hover:outline-primary-700 text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 disabled:bg-primary-200 disabled:outline-primary-200 shadow-xs",
   "secondary gray":
     "bg-white text-gray-700 outline outline-gray-300 outline-1 -outline-offset-1 hover:bg-gray-50 focus:ring-4 focus:ring-gray-100 disabled:text-gray-300 disabled:hover:bg-white shadow-xs",
   "secondary color":

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const presets = require("./presets/dist/index");
+const presets = require("@emryui/presets");
 
 module.exports = {
   presets: [presets],

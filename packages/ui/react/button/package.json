@@ -1,6 +1,6 @@
 {
-  "name": "@emry-ui/react-button",
-  "version": "0.0.1",
+  "name": "@emryui/react-button",
+  "version": "0.0.1-alpha",
   "license": "MIT",
   "description": "Emry UI React button component",
   "author": "Emry UI <emryui@proton.me>",
@@ -48,5 +48,9 @@
     "@types/react-dom": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@parcel/transformer-typescript-types": "2.9.3",
+    "typescript": ">=3.0.0"
   }
 }

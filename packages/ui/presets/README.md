@@ -7,6 +7,8 @@
   <p><b>Supercharge your frontend development</b></p>
 </div>
 
+A set of Tailwind `theme` configurtation options including: Colors (primary, gray, success, error, warning, +24 others), typography, gradients, containers and drop shadows.
+
 ### Installation
 
 ```
@@ -23,11 +25,3 @@ module.exports = {
   // Everything else
 }
 ```
-
-### What's included
-
-- [x] Colors (primary, gray, success, error, warning, +24 others)
-- [x] Typography
-- [x] Gradients (primary & gray)
-- [x] Container (sm, md, lg, xl)
-- [x] Drop shadows (sm, md, lg, xl, 2xl, 3xl)
