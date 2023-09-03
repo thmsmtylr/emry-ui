@@ -12,7 +12,7 @@ const Web: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Emry UI: Web</h1>
+        <h1>Emry UI: Website</h1>
         {/* <Button label="button" onClick={() => console.log("click")} /> */}
       </main>
     </>
