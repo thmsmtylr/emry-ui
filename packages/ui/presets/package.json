@@ -1,6 +1,6 @@
 {
   "name": "@emryui/presets",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "license": "MIT",
   "description": "Emry UI Tailwind presets",
   "author": "Emry UI <emryui@proton.me>",
@@ -12,7 +12,7 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
-    "directory": "./src"
+    "directory": "./dist"
   },
   "scripts": {
     "clean": "rm -rf dist",

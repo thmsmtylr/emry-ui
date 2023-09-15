@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Button, ButtonProps } from "./Button";
+import { Button, ButtonProps } from "@emryui/react-button";
 import { Dot } from "../../dot/src";
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import LockIcon from "../../../images/icons/svg/lock.svg";
@@ -97,16 +97,18 @@ export const PrimaryWithDot: Story = {
   },
 };
 
-export const YoutubeWithClassName: Story = {
+export const YoutubeHeadless: Story = {
   args: {
+    headless: true,
     children: "Button CTA",
     className:
       "relative text-white overflow-hidden bg-black text-sm py-2.5 px-4 rounded-lg font-medium border border-solid border-transparent transition-[background-image] bg-gradient-yt bg-clip-padding-border bg-origin-border-border before:content-[''] before:z-[1] before:bg-transparent before:absolute before:inset-0 before:transition-colors hover:before:bg-[#ffffff1a]",
   },
 };
 
-export const ShopifyWithClassName: Story = {
+export const ShopifyHeadless: Story = {
   args: {
+    headless: true,
     children: "Button CTA",
     className:
       "relative text-white border-none rounded-[0.5rem] min-h-[1.75rem] min-w-[1.75rem] px-3 py-1.5 text-xs font-medium bg-[#303030] before:bg-gradient-shopify before:rounded-[.5625rem] before:absolute before:inset-0 before:content-[''] before:mix-blend-luminosity before:shadow-shopify before:hover:shadow-shopify-hover before:hover:shadow-none",
@@ -115,12 +117,12 @@ export const ShopifyWithClassName: Story = {
 
 export const PrimaryWithIconOnly: Story = {
   args: {
+    icon: true,
     children: (
       <AccessibleIcon label="Lock account">
         <LockIcon className="h-5 w-5" />
       </AccessibleIcon>
     ),
-    iconOnly: true,
   },
 };
 

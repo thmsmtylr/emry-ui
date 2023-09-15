@@ -1,5 +1,4 @@
-import React from "react";
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { classNames } from "../../core/classnames";
 
 const BADGE_NAME = "Badge";
@@ -74,6 +73,7 @@ const variantClassNames = {
   gray: "bg-gray-50 ring-gray-200 text-gray-700",
   primary: "bg-primary-50 ring-primary-200 text-primary-700",
   error: "bg-error-50 ring-error-200 text-error-700",
+  success: "bg-success-50 ring-success-200 text-success-700",
 } as Record<BadgeVariant, string>;
 
 const defaultSizeClassNames = {

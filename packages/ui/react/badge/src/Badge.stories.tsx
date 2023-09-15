@@ -28,3 +28,10 @@ export const Error: Story = {
     variant: "error",
   },
 };
+
+export const Success: Story = {
+  args: {
+    children: "Label",
+    variant: "success",
+  },
+};

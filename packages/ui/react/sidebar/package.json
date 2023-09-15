@@ -1,19 +1,14 @@
 {
-  "name": "@emryui/react-button",
-  "version": "0.0.5-alpha",
+  "name": "@emryui/react-sidebar",
+  "version": "0.0.1",
   "license": "MIT",
-  "description": "Emry UI React button component",
+  "description": "Emry UI React sidebar component",
   "author": "Emry UI <emryui@proton.me>",
   "homepage": "https://emryui.com",
   "source": "./src/index.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "directory": "./dist"
-  },
   "exports": {
     ".": {
       "import": {
@@ -40,7 +35,6 @@
     "type": "git",
     "url": "git+https://github.com/thmsmtylr/emry-ui.git"
   },
-  "tsconfig": "./tsconfig.json",
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
@@ -54,11 +48,5 @@
     "@types/react-dom": {
       "optional": true
     }
-  },
-  "keywords": [
-    "Emry UI",
-    "Emry UI button",
-    "Tailwind",
-    "css"
-  ]
+  }
 }

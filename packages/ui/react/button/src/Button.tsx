@@ -1,7 +1,7 @@
-import React, { ButtonHTMLAttributes } from "react";
-import { forwardRef } from "react";
+import * as React from "react";
+import { ButtonHTMLAttributes, ReactNode, forwardRef } from "react";
 import { classNames } from "../../core/classnames";
-import { useRemoveClasses } from "../../core/hooks";
+import { useClassNames } from "../../core/hooks/useClassNames";
 
 type ButtonSize = "sm" | "md" | "lg" | "xl" | "2xl";
 
@@ -18,7 +18,7 @@ type ButtonTransitionSpeed = "fast" | "subtle" | "slow" | "none";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
-  children: any;
+  children: ReactNode;
   disabled?: boolean;
   type?: "submit" | "reset" | "button";
   variant?: ButtonVariant;
@@ -28,8 +28,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   transition?: ButtonTransitionSpeed;
   destructive?: boolean;
   dot?: boolean;
-  iconOnly?: boolean;
   as?: keyof JSX.IntrinsicElements;
+  headless?: boolean;
+  icon?: boolean;
 }
 
 type ButtonRef = HTMLButtonElement;
@@ -52,37 +53,36 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
     className = "",
     transition = "subtle",
     dot = false,
-    iconOnly = false,
     as = "button",
+    headless = false,
+    icon = false,
     ...rest
   } = props;
 
-  const removeClasses = useRemoveClasses();
+  const variantClasses = destructive
+    ? destructiveVariantClassNames[variant]
+    : variantClassNames[variant];
 
-  // NOTE: The order of this matters. E.g. `addClassNames` needs
-  // to remain at the last index of our array to ensure that
-  // added classes have the highest priority when it comes
-  // to applying styles
-  let classList = !className
-    ? [
-        coreClassNames,
-        iconOnly
-          ? iconOnlySizeClassNames[size ? size : "sm"]
-          : sizeClassNames[size],
-        !destructive
-          ? variantClassNames[variant]
-          : destructiveVariantClassNames[variant],
-        transitionClassNames[transition],
-        addClassNames ?? "",
-      ]
-    : [className];
+  const sizeClasses = icon
+    ? iconOnlySizeClassNames[size]
+    : sizeClassNames[size];
 
-  if (removeClassNames) {
-    classList = removeClasses(classList, removeClassNames);
+  const { classes, addClasses, removeClasses } = useClassNames(
+    className,
+    coreClassNames,
+    variantClasses,
+    sizeClasses,
+    transitionClassNames[transition]
+  );
+
+  let classList: string = !headless ? classes : className;
+
+  if (addClassNames) {
+    classList = addClasses(addClassNames);
   }
 
-  if (variant === "link color" || variant === "link gray") {
-    classList = removeClasses(classList, "px-4 py-2.5");
+  if (removeClassNames) {
+    classList = removeClasses(removeClassNames);
   }
 
   return React.createElement(
@@ -93,7 +93,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
       role: as !== "button" ? "button" : undefined,
       "aria-label": as !== "button" ? "button" : undefined,
       ...(as !== "button" ? {} : { type }),
-      className: classNames(...classList),
+      className: classNames(classList),
       ...rest,
     },
     children
@@ -124,12 +124,12 @@ const sizeClassNames = {
 } as Record<ButtonSize, string>;
 
 const coreClassNames: string =
-  "inline-flex items-center justify-center flex-grow-0 gap-2 rounded-lg font-semibold outline outline-1";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold";
 
 const variantClassNames = {
   // Default
   primary:
-    "bg-primary-600 outline-primary-600 hover:outline-primary-700 text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 disabled:bg-primary-200 disabled:outline-primary-200 shadow-xs",
+    "bg-primary-600 outline outline-1 outline-primary-600 text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 disabled:bg-primary-200 disabled:outline-primary-200 shadow-xs",
   "secondary gray":
     "bg-white text-gray-700 outline outline-gray-300 outline-1 -outline-offset-1 hover:bg-gray-50 focus:ring-4 focus:ring-gray-100 disabled:text-gray-300 disabled:hover:bg-white shadow-xs",
   "secondary color":
@@ -139,9 +139,9 @@ const variantClassNames = {
   "tertiary color":
     "bg-white text-primary-700 hover:text-primary-800 hover:bg-primary-50 disabled:text-gray-300 disabled:hover:bg-white",
   "link gray":
-    "bg-white text-gray-600 hover:text-gray-700 disabled:text-gray-300",
+    "bg-white text-gray-600 hover:text-gray-700 disabled:text-gray-300 !p-0",
   "link color":
-    "text-primary-700 hover:text-primary-800 disabled:text-gray-300",
+    "text-primary-700 hover:text-primary-800 disabled:text-gray-300 !p-0",
 } as Record<ButtonVariant, string>;
 
 const destructiveVariantClassNames = {
