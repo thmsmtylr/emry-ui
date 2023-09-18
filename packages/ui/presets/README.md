@@ -7,7 +7,7 @@
   <p><b>Supercharge your frontend development</b></p>
 </div>
 
-A set of Tailwind `theme` configurtation options including: Colors (primary, gray, success, error, warning, +24 others), typography, gradients, containers and drop shadows.
+A set of Tailwind `theme` configuration options including: Colors (primary, gray, success, error, warning, +24 others), typography, gradients, containers and drop shadows.
 
 ### Installation
 

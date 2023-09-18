@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Button, ButtonProps } from "@emryui/react-button";
+import { Button, ButtonProps } from "../src";
 import { Dot } from "../../dot/src";
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import LockIcon from "../../../images/icons/svg/lock.svg";
@@ -8,6 +8,21 @@ import LockIcon from "../../../images/icons/svg/lock.svg";
 const meta: Meta<typeof Button> = {
   title: "Buttons",
   component: Button,
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          minHeight: "30vh",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
@@ -35,7 +50,8 @@ export const PrimaryWithIconLeading: Story = {
   args: {
     children: (
       <>
-        <LockIcon className="h-5 w-5" /> Button CTA
+        <LockIcon className="h-5 w-5" />
+        Button CTA
       </>
     ),
     onClick: () => console.log("On click"),
@@ -126,12 +142,10 @@ export const PrimaryWithIconOnly: Story = {
   },
 };
 
-export const SecondaryGray: Story = {
+export const Secondary: Story = {
   args: {
     children: "Button CTA",
-    onClick: () => console.log("On click"),
-    disabled: false,
-    variant: "secondary gray",
+    variant: "secondary",
   },
 };
 
@@ -149,7 +163,7 @@ export const TertiaryGray: Story = {
     children: "Button CTA",
     onClick: () => console.log("On click"),
     disabled: true,
-    variant: "tertiary gray",
+    variant: "tertiary",
   },
 };
 
@@ -167,16 +181,39 @@ export const LinkGray: Story = {
     children: "Button CTA",
     onClick: () => console.log("On click"),
     disabled: false,
-    variant: "link gray",
+    variant: "link",
   },
 };
 
 export const PrimaryDestructive = {
   args: {
     children: "Button CTA",
-    onClick: () => console.log("On click"),
     disabled: false,
     destructive: true,
+  },
+};
+
+export const SecondaryDestructive = {
+  args: {
+    children: "Button CTA",
+    variant: "secondary",
+    destructive: true,
+  },
+};
+
+export const SecondaryColorDestructive = {
+  args: {
+    children: "Button CTA",
+    variant: "secondary color",
+    destructive: true,
+  },
+};
+
+export const TertiaryColorDestructive: Story = {
+  args: {
+    children: "Button CTA",
+    destructive: true,
+    variant: "tertiary color",
   },
 };
 

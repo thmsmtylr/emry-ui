@@ -5,18 +5,22 @@ import React, {
   HTMLAttributes,
 } from "react";
 import { Button } from "react/button/src";
+import { classNames } from "../../core/classnames";
+import { useClassNames } from "../../core/hooks/useClassNames";
 
 const SIDEBAR_NAME = "Sidebar";
 
 type SidebarRef = HTMLDivElement;
 
-type SidebarTheme = "light" | "dark" | "primary";
+// type SidebarTheme = "light" | "dark" | "primary";
 
-interface SidebarProps {
+interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
   addClassNames?: string;
   removeClassNames?: string;
   className?: string;
+  headless?: boolean;
   children?: ReactNode;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 /**
@@ -26,13 +30,43 @@ interface SidebarProps {
  * accessible links to everywhere the user may need to go without being cluttered/overwhelming.
  */
 const Sidebar = forwardRef<SidebarRef, SidebarProps>((props, ref) => {
-  const { children, className, ...rest } = props;
-  return (
-    <div ref={ref} className={className} {...rest}>
-      {children}
-    </div>
+  const {
+    children,
+    className,
+    headless,
+    addClassNames,
+    removeClassNames,
+    as = "div",
+    ...rest
+  } = props;
+
+  const { classes, addClasses, removeClasses } = useClassNames(
+    sidebarCoreClassNames
+  );
+
+  let classList: string = !headless ? classes : className ?? "";
+
+  if (addClassNames) {
+    classList = addClasses(addClassNames);
+  }
+
+  if (removeClassNames) {
+    classList = removeClasses(removeClassNames);
+  }
+
+  return React.createElement(
+    as,
+    {
+      ref,
+      className: classNames(classList),
+      ...rest,
+    },
+    children
   );
 });
+
+const sidebarCoreClassNames: string =
+  "flex flex-col flex-grow overflow-y-auto w-72 fixed top-0 bottom-0 bg-primary-700 pt-8 gap-y-6";
 
 Sidebar.displayName = SIDEBAR_NAME;
 
