@@ -4,4 +4,4 @@
 
 **A UI component library for building high quality, accessbile design systems and apps.**
 
-Emry UI is a component library meticulously designed for seamless integration of form, function, accessibility, and an unparalleled developer experience. Whether you opt for the captivating included UI, craft your own bespoke design, or strike a harmonious balance between the two, our components empower you to elevate your project with style and efficiency.
+Emry UI, a meticulously designed component library, seamlessly integrates form, function, accessibility, and a superior developer experience. Choose from the included UI, craft your bespoke design, or strike a balance between the two for optimal customization.
