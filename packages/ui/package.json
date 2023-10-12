@@ -81,9 +81,10 @@
     "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "build:ui": "npm run build:presets && npm run build:button",
+    "build:ui": "npm run build:presets && npm run build:button && npm run build:badge",
     "build:presets": "cd ./presets && npm run build",
     "build:button": "cd ./react/button && npm run build",
+    "build:badge": "cd ./react/badge && npm run build",
     "release:presets": "cd ./presets && npm publish",
     "test": "jest"
   },

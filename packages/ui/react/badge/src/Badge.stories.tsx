@@ -29,9 +29,37 @@ export const Error: Story = {
   },
 };
 
+export const Warning: Story = {
+  args: {
+    children: "Label",
+    variant: "warning",
+  },
+};
+
 export const Success: Story = {
   args: {
     children: "Label",
     variant: "success",
+  },
+};
+
+export const GrayPill: Story = {
+  args: {
+    children: "Label",
+    type: "pill color",
+  },
+};
+
+export const GrayPillOultine: Story = {
+  args: {
+    children: "Label",
+    type: "pill oultine",
+  },
+};
+
+export const GrayModern: Story = {
+  args: {
+    children: "Label",
+    type: "badge modern",
   },
 };

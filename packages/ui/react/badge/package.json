@@ -1,6 +1,6 @@
 {
   "name": "@emryui/react-badge",
-  "version": "0.0.1",
+  "version": "0.0.3-alpha",
   "license": "MIT",
   "description": "Emry UI React badge component",
   "author": "Emry UI <emryui@proton.me>",
@@ -9,6 +9,11 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "directory": "./dist"
+  },
   "exports": {
     ".": {
       "import": {
