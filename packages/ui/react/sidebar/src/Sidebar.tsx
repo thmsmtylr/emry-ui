@@ -20,7 +20,7 @@ interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   headless?: boolean;
   children?: ReactNode;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof JSX.IntrinsicElements; // @TODO: Refactor to use Radix `slot`
 }
 
 /**

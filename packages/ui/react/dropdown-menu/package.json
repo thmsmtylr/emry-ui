@@ -1,8 +1,8 @@
 {
-  "name": "@emryui/react-badge",
-  "version": "0.1.5-alpha",
+  "name": "@emryui/react-dropdown-menu",
+  "version": "0.0.1-alpha",
   "license": "MIT",
-  "description": "Emry UI React badge component",
+  "description": "Emry UI React dropdown menu component",
   "author": "Emry UI <emryui@proton.me>",
   "homepage": "https://emryui.com",
   "source": "./src/index.ts",
@@ -34,7 +34,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "version": "yarn version",
-    "build": "npm run clean && parcel build src/index.ts"
+    "build": "parcel build src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -54,15 +54,7 @@
       "optional": true
     }
   },
-  "devDependencies": {
-    "@parcel/transformer-typescript-types": "2.9.3",
-    "typescript": "^5.2.2"
-  },
-  "keywords": [
-    "Emry UI",
-    "Emry UI button",
-    "Tailwind",
-    "css",
-    "badge"
-  ]
+  "dependencies": {
+    "@radix-ui/react-toggle-group": "^1.0.4"
+  }
 }

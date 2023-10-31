@@ -1,6 +1,6 @@
 {
   "name": "@emryui/react-button",
-  "version": "0.0.8-alpha",
+  "version": "0.1.8-alpha",
   "license": "MIT",
   "description": "Emry UI React button component",
   "author": "Emry UI <emryui@proton.me>",
@@ -34,7 +34,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "version": "yarn version",
-    "build": "npm run clean && parcel build src/index.ts"
+    "build": "npm run clean && parcel build src/index.ts && npm run build:css",
+    "build:css": "postcss styles/globals.css -o dist/styles.css"
   },
   "repository": {
     "type": "git",
@@ -59,6 +60,11 @@
     "Emry UI",
     "Emry UI button",
     "Tailwind",
-    "css"
-  ]
+    "css",
+    "button"
+  ],
+  "devDependencies": {
+    "@parcel/transformer-typescript-types": "2.9.3",
+    "typescript": ">=3.0.0"
+  }
 }

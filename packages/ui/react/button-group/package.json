@@ -1,8 +1,8 @@
 {
-  "name": "@emryui/react-badge",
-  "version": "0.1.5-alpha",
+  "name": "@emryui/react-button-group",
+  "version": "0.0.3-alpha",
   "license": "MIT",
-  "description": "Emry UI React badge component",
+  "description": "Emry UI React button group component",
   "author": "Emry UI <emryui@proton.me>",
   "homepage": "https://emryui.com",
   "source": "./src/index.ts",
@@ -13,6 +13,14 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "directory": "./dist"
+  },
+  "targets": {
+    "main": {
+      "optimize": true
+    },
+    "module": {
+      "optimize": true
+    }
   },
   "exports": {
     ".": {
@@ -34,7 +42,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "version": "yarn version",
-    "build": "npm run clean && parcel build src/index.ts"
+    "build": "parcel build src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -54,15 +62,20 @@
       "optional": true
     }
   },
+  "dependencies": {
+    "@radix-ui/react-toggle-group": "^1.0.4"
+  },
   "devDependencies": {
     "@parcel/transformer-typescript-types": "2.9.3",
-    "typescript": "^5.2.2"
+    "typescript": ">=3.0.0"
   },
   "keywords": [
     "Emry UI",
-    "Emry UI button",
+    "Emry UI button group",
     "Tailwind",
     "css",
-    "badge"
+    "button group",
+    "react",
+    "typescript"
   ]
 }

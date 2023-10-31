@@ -1,0 +1,106 @@
+import { Button } from "@emryui/react-button";
+
+# Button
+
+Buttons communicate actions that users can take
+
+## Installation
+
+```sh
+$ yarn add @emryui/react-button
+$ npm install @emryui/react-button
+$ bun add @emryui/react-button
+```
+
+### Tailwind
+
+Add the `@emryui/presets` package to use the default component styles
+
+```sh
+$ yarn add @emryui/presets
+$ npm install @emryui/presets
+$ bun add @emryui/presets
+```
+
+```js
+const path = require("path");
+
+module.exports = {
+  presets: [require("@emryui/presets")],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    path.join(path.dirname(require.resolve("@emryui/react-button")), "**/*.js"),
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### CSS
+
+```
+import '@emryui/react-button/dist/styles.css'
+```
+
+## Usage
+
+Import the Button component and use it in your React application
+
+```js
+import { Button } from "@emryui/react-button";
+
+export function ButtonDemo() {
+  return <Button>Click me</Button>;
+}
+```
+
+<Button>Click me</Button>
+
+## Advanced usage
+
+```js
+import { Button } from "@emryui/react-button";
+
+export function ButtonAdvancedDemo() {
+  return (
+    <Button
+      headless
+      className="relative text-white overflow-hidden bg-black text-sm py-2.5 px-4 rounded-lg font-medium border border-solid border-transparent transition-[background-image] bg-gradient-yt bg-clip-padding-border bg-origin-border-border before:content-[''] before:z-[1] before:bg-transparent before:absolute before:inset-0 before:transition-colors hover:before:bg-[#ffffff1a]"
+      onClick={() => console.log("On click")}
+      data-id="123"
+    >
+      New for you
+    </Button>
+  );
+}
+```
+
+<Button
+  headless
+  className="relative text-white overflow-hidden bg-black text-sm py-2.5 px-4 rounded-lg font-medium border border-solid border-transparent transition-[background-image] bg-gradient-yt bg-clip-padding-border bg-origin-border-border before:content-[''] before:z-[1] before:bg-transparent before:absolute before:inset-0 before:transition-colors hover:before:bg-[#ffffff1a]"
+  onClick={() => console.log("On click")}
+  data-id="123"
+>
+  {"New for you"}
+</Button>
+
+## Props
+
+| Prop             | Type                                                                                          | Default         |
+| ---------------- | --------------------------------------------------------------------------------------------- | --------------- |
+| size             | `sm`, `md`, `lg`, `xl`, `2xl`                                                                 | `md`            |
+| children         | ReactNode                                                                                     |                 |
+| disabled         | `boolean`                                                                                     | `false`         |
+| type             | `submit`, `reset`, `button`                                                                   | `button`        |
+| variant          | `primary`, `secondary`, `secondary color`, `tertiary`, `tertiary color`, `link`, `link color` | `primary`       |
+| addClassNames    | string                                                                                        |                 |
+| removeClassNames | string                                                                                        |                 |
+| className        | string                                                                                        |                 |
+| transition       | `fast`, `subtle`, `slow`, `none`                                                              | `none`          |
+| destructive      | boolean                                                                                       | `true`, `false` |
+| dot              | boolean                                                                                       | `false`         |
+| as               | keyof JSX.IntrinsicElements                                                                   | `button`        |
+| headless         | boolean                                                                                       | `false`         |
+| icon             | boolean                                                                                       | `false`         |

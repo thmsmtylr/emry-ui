@@ -1,0 +1,35 @@
+# Getting started
+
+A quick tutorial to get you up and running with Emry UI.
+
+## Implementing a Button
+
+import { useState } from "react";
+
+{/* Import CSS modules */}
+import styles from '../components/counters.module.css'
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)} className={styles.counter}>
+        Clicked {count} times
+      </button>
+    </div>
+  );
+};
+
+<Counter />
+
+```js filename="demo.js" {3} copy
+let a = 1;
+
+console.log(a);
+```
+
+## External Component
+
+import Counters from "../components/counters";
+
+<Counters />

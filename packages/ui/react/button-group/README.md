@@ -3,16 +3,16 @@
 </div>
 
 <div align="center">
-  <h1>Emry UI - React Badge</h1>
+  <h1>Emry UI - Button Group</h1>
   <p><b>Supercharge your frontend development</b></p>
 </div>
 
 ### Installation
 
-A highly configurable React badge component. Includes stunning default styles or style it to suit your own design system.
+A highly configurable React button group component. Includes stunning default styles or style it to suit your own design system.
 
 ```sh
-$ yarn add @emryui/react-badge
+$ yarn add @emryui/react-button-group
 # or
-$ npm install @emryui/react-badge
+$ npm install @emryui/react-button-group
 ```

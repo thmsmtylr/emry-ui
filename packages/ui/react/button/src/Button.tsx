@@ -27,6 +27,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   transition?: ButtonTransitionSpeed;
   destructive?: boolean;
   dot?: boolean;
+  // @TODO: Refactor to use Radix `slot`
   as?: keyof JSX.IntrinsicElements;
   headless?: boolean;
   icon?: boolean;

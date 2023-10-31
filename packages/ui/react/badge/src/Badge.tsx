@@ -42,7 +42,7 @@ interface BadgeProps {
   headless?: boolean;
   className?: string;
   children: any;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof JSX.IntrinsicElements; // @TODO: Refactor to use Radix `slot`
 }
 
 /**
